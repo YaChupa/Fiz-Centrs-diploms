@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
 
-Route::get('/profiles', 'App\Http\Controllers\MainController@profiles')->name('profiles');
-Route::get('/profiles/addclient', 'App\Http\Controllers\MainController@addclient')->name('addclient');
-Route::get('/profiles/{profile?}', 'App\Http\Controllers\MainController@profile')->name('profile');
-Route::post('/profiles/addclient', 'App\Http\Controllers\MainController@addclientDB')->name('addclientDB');
+Route::get('/profiles', 'App\Http\Controllers\ClientController@profiles')->name('profiles');
+Route::delete('/profiles/{profile}', 'App\Http\Controllers\ClientController@deleteprofile')->name('deleteprofile');
+Route::post('/profiles', 'App\Http\Controllers\ClientController@addclientDB')->name('addclientDB');
+Route::get('/profiles/addclient', 'App\Http\Controllers\ClientController@addclient')->name('addclient');
+Route::get('/profiles/{profile}/edit', 'App\Http\Controllers\ClientController@updateprofile')->name('updateprofile');
+Route::post('/profiles/{profile}/edit', 'App\Http\Controllers\ClientController@updateprofilesubmit')->name('updateprofilesubmit');
+Route::get('/profiles/{profile}', 'App\Http\Controllers\ClientController@profile')->name('profile');
+
+
+//Route::delete('/profiles/{profile}', 'App\Http\Controllers\ClientController@deleteprofile')->name('deleteprofile');
 
 Route::get('/query', 'App\Http\Controllers\QueryController@query')->name('query');
 
@@ -28,6 +34,6 @@ Route::get('/{category}', 'App\Http\Controllers\MainController@category')->name(
 
 //QueryController
 
-
+ 
 
 

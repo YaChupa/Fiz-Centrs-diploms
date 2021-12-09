@@ -16,11 +16,11 @@
                 <a href="{{route('profile',[$profile->id]) }}"
                    class="btn btn-default"
                    role="button">About</a>
-                <a href="{{route('profile',[$profile->id]) }}"
-                   class="btn btn-default"
+                <a href="{{route('deleteprofile',[$profile->id]) }}"
+                   class="btn btn-danger"
                    role="button">Delete</a>
-                <a href="{{route('profile',[$profile->id]) }}"
-                   class="btn btn-default"
+                <a href="{{route('updateprofile',[$profile->id]) }}"
+                   class="btn btn-primary"
                    role="button">Change</a>
             </p>
         </div>

@@ -4,45 +4,31 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MainController extends Controller
+class ClientController extends Controller
 {
-    public function index(){
-        return view('index');
-    }
-    
-    public function query(){
-        return view('query');
-    } 
-    
-     public function categories(){
-         $categories = \App\Models\Category::get();
-        return view('categories',compact('categories'));
-    }
-    
-     public function category($code){
-        $category =  \App\Models\Category::where('code', $code) ->first();
-      return view('category', compact('category'));
-    }
-    
-     /*public function addclient(){
-        return view('addclient');
-    } */
-    
-    /* public function profiles(){
+    public function profiles(){
         $profiles = \App\Models\Client::get(); 
         return view('profiles',compact('profiles'));
-    }*/
+    }
     
-   /*public function profile($category, $profile = null){
-        return view('profile', ['profile' => $profile]);
-    }*/
+     public function deleteprofile($id){
+        //\App\Models\Client::find($id)->delete();
+        $deleteprofile =  \App\Models\Client::find($id);
+        $deleteprofile->delete();
+         
+       return redirect('/profiles');
+        //dd('hello');
+    } 
     
-   /*  public function profile($id){
+     public function profile($id){
         $profile =  \App\Models\Client::where('id', $id) ->first();
       return view('profile', compact('profile'));
-    }*/
+    }
     
-    /*public function addclientDB(){
+    public function addclient(){
+        return view('addclient');
+    } 
+    public function addclientDB(){
          //public function addclientDB(Request $addclient){
        // $cleintId = session('orderId');
         //if(is_null($cleintId)){
@@ -56,7 +42,7 @@ class MainController extends Controller
         $order->description = $addclient->description;
         $order->save();*/
        // $newclient = $addclient;
-       /* $client = new ClientController();
+       $client = new \App\Models\Client();
         
         $client->name_surname = request('name_surname');
         $client->category_id = request('category_id');
@@ -68,7 +54,28 @@ class MainController extends Controller
         return redirect('/profiles');
                 
        // return request()->all();
-        }*/
+    }
+    
+    public function updateprofile($id){
+         $updateprofile =  \App\Models\Client::where('id', $id) ->first();
+      return view('updateprofile', compact('updateprofile'));
+    } 
+    
+    public function updateprofilesubmit($id){
+        
+        $client = \App\Models\Client::find($id);
+        
+        $client->name_surname = request('name_surname');
+        $client->category_id = request('category_id');
+        $client->COVID_Sertifikats = request('COVID_Sertifikats');
+        $client->description = request('description');
        
+        $client->save();
+       // return redirect('/profiles')->with('success','Izmeneno ');
+       return redirect('/profiles');
+    } 
+    
+   
+    
     
 }
