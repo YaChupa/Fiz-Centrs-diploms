@@ -22,10 +22,10 @@
         <div id="navbar" class="collapse navbar-collapse">  
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{route('index')}}">Galvena lapa</a></li>
-                <li ><a href="{{route('categories')}}">Uslugi</a></li>
-                <li ><a href="{{route('query')}}">Zapisatsa</a></li> 
+                @auth
+                <li ><a href="{{route('profiles')}}">Klienti</a></li>   
+                @endauth
             </ul>
-
             <ul class="nav navbar-nav navbar-right">
                 
                                     @guest

@@ -22,11 +22,15 @@
                         </div>
                         <br>
                         <br>
-                        
-                                                    <div class="form-group">
+                            <div class="form-group">
                                 <label for="name" class="control-label col-lg-offset-3 col-lg-2">Category: </label>
                                 <div class="col-lg-4">
-                                    <input type="text" name="category_id" id="email" value="{{$updateprofile->category_id}}" class="form-control">
+                              <select name="category_id">                  
+                             @foreach($categoryinfo as $item)
+                             <option value="{{$item->id}}"  {{$item->id == $updateprofile->category_id  ? 'selected' : ''}}>{{$item->name}}</option>
+                              @endforeach  
+                              
+                             </select>
                                 </div>
                             </div>
                         <br>
@@ -43,6 +47,14 @@
                             <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Description: </label>
                             <div class="col-lg-4">
                                 <textarea type="text" name="description" id="phone" value="" class="form-control">{{$updateprofile->description}}</textarea>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Phone: </label>
+                            <div class="col-lg-4">
+                                <input type="text" name="phone" id="phone" value="{{$updateprofile->phone}}" class="form-control">
                             </div>
                         </div>
                         <br>

@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Kategorija - '. $category->name)
+@section('title', 'Kategorija - ')
 
 @section('content')
     <div class="starter-template">

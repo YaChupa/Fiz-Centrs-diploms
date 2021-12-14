@@ -14,6 +14,7 @@
             
 
         </div>
+            <p>Talrunis - {{$profile->phone}}</p>
             <p>COVID Sertifikats - {{$profile->COVID_Sertifikats}}</p>
             <p>Kategorija - {{$profile->getCategory()->name}}</p>
             <p>Informacija par pacientu - {{$profile->description}}</p>

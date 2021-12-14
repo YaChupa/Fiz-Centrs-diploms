@@ -1,10 +1,10 @@
-@extends('master')
+@extends('adminmaster')
 
 @section('title')
 
 @section('content')
     <div class="starter-template">
-        <h1>Domashanya stranica</h1>
+        <h1>V adminke</h1>
 
     </div>
 @endsection

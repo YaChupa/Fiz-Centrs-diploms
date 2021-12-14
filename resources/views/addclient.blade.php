@@ -22,13 +22,19 @@
                         </div>
                         <br>
                         <br>
-                        
-                                                    <div class="form-group">
+                                                <div class="form-group">
                                 <label for="name" class="control-label col-lg-offset-3 col-lg-2">Category: </label>
                                 <div class="col-lg-4">
-                                    <input type="text" name="category_id" id="email" value="" class="form-control">
+                              <select name="category_id">                  
+                             @foreach($categoryinfo as $item)
+                             <option value="{{$item->id}}">{{$item->name}}</option>
+                              @endforeach  
+                              
+                             </select>
                                 </div>
-                            </div>
+                        </div>
+                        
+                                               
                         <br>
                         <br>
                          <div class="form-group">
@@ -45,6 +51,16 @@
                                 <textarea type="text" name="description" id="description" value="" class="form-control"></textarea>
                             </div>
                         </div>
+                        
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Phone: </label>
+                            <div class="col-lg-4">
+                                <input type="text" name="phone" id="phone" value="" class="form-control">
+                            </div>
+                        </div>
+                        
                         <br>
                         <br>
                     </div>
