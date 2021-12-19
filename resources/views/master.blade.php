@@ -24,6 +24,17 @@
                 <li class="active"><a href="{{route('index')}}">Galvena lapa</a></li>
                 <li ><a href="{{route('categories')}}">Uslugi</a></li>
                 <li ><a href="{{route('query')}}">Zapisatsa</a></li> 
+                @auth
+                @if(auth()->user()->isUser())
+                <li ><a href="{{route('userprofile')}}">Your Med.CArd</a></li>
+                @endif
+                @endauth
+                @auth
+                @if(auth()->user()->isWorker())
+                <li ><a href="{{route('profiles')}}">Klienti</a></li>
+                <li ><a href="{{route('queries')}}">Zapisi</a></li>  
+                @endif
+                @endauth
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -34,7 +45,9 @@
                                     @endguest
                                    
                                     @auth
+                                    @if(auth()->user()->isAdmin())
                                     <li><a href="{{ route('admin') }}">Ådminka</a></li>
+                                    @endif
                                     <li><a href="{{ route('get-logout') }}">Logout</a></li>
                                     @endauth
                                  

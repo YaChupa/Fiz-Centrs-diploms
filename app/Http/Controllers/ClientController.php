@@ -31,19 +31,7 @@ class ClientController extends Controller
             'categoryinfo' => $categoryinfo]);
     } 
     public function addclientDB(){
-         //public function addclientDB(Request $addclient){
-       // $cleintId = session('orderId');
-        //if(is_null($cleintId)){
-          //  return redirect()->route('index');
-        //}
-       // dd($addclient->all());
-       /* $order = \App\Client::find($cleintId);
-        $order->name_surname = $addclient->name_surname;
-        $order->category_id = $addclient->category_id;
-        $order->COVID_Sertifikats = $addclient->COVID_Sertifikats;
-        $order->description = $addclient->description;
-        $order->save();*/
-       // $newclient = $addclient;
+       
        $client = new \App\Models\Client();
         
         $client->name_surname = request('name_surname');
@@ -89,14 +77,19 @@ class ClientController extends Controller
        // return redirect('/profiles')->with('success','Izmeneno ');
        return redirect('profiles');
     } 
-     /* public function deleteprofile($id){
-        //\App\Models\Client::find($id)->delete();
-        $deleteprofile =  \App\Models\Client::find($id);
-        $deleteprofile->delete();
-         
-       return redirect('/profiles');
-        //dd('hello');
-    } */
+    
+    public function search(Request $request){
+        
+        $search = $request->search;
+       // dd($search);
+         $profiles =  \App\Models\Client::where('name_surname', 'LIKE', "%{$search}%");
+         return view('profiles',compact('profiles'));
+    }
+    
+    public function userprofile() {
+        
+        return view('userprofile');
+    }
    
     
     

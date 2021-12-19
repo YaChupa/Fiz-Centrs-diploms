@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Query extends Model
 {
     use HasFactory;
+    
+     public function getCategory(){
+        return Category::find($this->category_id);
+        
+    } 
+    
+    
+ protected $fillable = ['user_id', 'date_time'];
+ public $timestamps = null;
 }

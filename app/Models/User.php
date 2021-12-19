@@ -47,4 +47,14 @@ class User extends Authenticatable
         
         return $this->user_status ===1;
     }
+    
+    public function isUser(){
+        
+        return $this->user_status ===0;
+    }
+    
+    public function isWorker(){
+        
+        return $this->user_status ===2;
+    }
 }

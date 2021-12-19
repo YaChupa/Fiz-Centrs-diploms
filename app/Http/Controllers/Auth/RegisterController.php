@@ -31,7 +31,7 @@ class RegisterController extends Controller
      */
     
     protected function redirectTo(){
-        return route('profiles');
+        return route('index');
     }
     
     //protected $redirectTo = RouteServiceProvider::HOME;

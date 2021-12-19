@@ -4,32 +4,43 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp64/www/Centrs/app/Models/User.php</file>
-            <file>file:/C:/wamp64/www/Centrs/app/Http/Middleware/CheckUserStatus.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Models/Category.php</file>
+            <file>file:/C:/wamp64/www/Centrs/database/migrations/2021_12_07_172909_create_queries_table.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Http/Middleware/CheckIsUser.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/home.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Imports/ScheduleImport.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/wamp64/www/Centrs/resources/views/category.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/addclient.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/config/app.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Models/Query.php</file>
+            <file>file:/C:/wamp64/www/Centrs/resources/views/querycard.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/QueryController.php</file>
             <file>file:/C:/wamp64/www/Centrs/database/migrations/2021_12_10_152135_alter_table_users.php</file>
+            <file>file:/C:/wamp64/www/Centrs/database/migrations/2021_12_14_153546_create_schedule_table.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Models/Client.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/MainController.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/admin.blade.php</file>
-            <file>file:/C:/wamp64/www/Centrs/resources/views/auth/login.blade.php</file>
-            <file>file:/C:/wamp64/www/Centrs/database/migrations/2021_12_13_172527_alter_table_clients.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/Auth/VerificationController.php</file>
             <file>file:/C:/wamp64/www/Centrs/database/migrations/2021_12_07_144228_create_clients_table.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Http/Middleware/CheckIsWorker.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/Auth/RegisterController.php</file>
+            <file>file:/C:/wamp64/www/Centrs/resources/views/userprofile.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/card.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/app/Http/Middleware/CheckIsAdmin.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/categories.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/routes/web.php</file>
-            <file>file:/C:/wamp64/www/Centrs/composer.json</file>
+            <file>file:/C:/wamp64/www/Centrs/database/migrations/2014_10_12_000000_create_users_table.php</file>
+            <file>file:/C:/wamp64/www/Centrs/resources/views/queries.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/Auth/LoginController.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/index.blade.php</file>
-            <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/Controller.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Kernel.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/profiles.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/ClientController.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/updateprofile.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/master.blade.php</file>
-            <file>file:/C:/wamp64/www/Centrs/resources/views/adminmaster.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/profile.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/resources/views/query.blade.php</file>
         </group>
     </open-files>
 </project-private>
