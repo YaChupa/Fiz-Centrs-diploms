@@ -24,6 +24,7 @@ class CreateQueriesTable extends Migration
             $table->text('description') ->nullable();
             $table->string('user_id');
             $table->timestamps();
+
             
         });
     }

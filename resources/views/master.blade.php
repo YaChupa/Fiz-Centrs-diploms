@@ -22,17 +22,17 @@
         <div id="navbar" class="collapse navbar-collapse">  
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{route('index')}}">Galvena lapa</a></li>
-                <li ><a href="{{route('categories')}}">Uslugi</a></li>
-                <li ><a href="{{route('query')}}">Zapisatsa</a></li> 
+                <li ><a href="{{route('categories')}}">Pakalpojumi</a></li>
+                <li ><a href="{{route('query')}}">Ierakstities</a></li> 
                 @auth
                 @if(auth()->user()->isUser())
-                <li ><a href="{{route('userprofile')}}">Your Med.CArd</a></li>
+                <li ><a href="{{route('userprofile')}}">Medicinas karte</a></li>
                 @endif
                 @endauth
                 @auth
                 @if(auth()->user()->isWorker())
                 <li ><a href="{{route('profiles')}}">Klienti</a></li>
-                <li ><a href="{{route('queries')}}">Zapisi</a></li>  
+                <li ><a href="{{route('queries')}}">Ieraksti</a></li>  
                 @endif
                 @endauth
             </ul>
@@ -46,7 +46,7 @@
                                    
                                     @auth
                                     @if(auth()->user()->isAdmin())
-                                    <li><a href="{{ route('admin') }}">Ådminka</a></li>
+                                    <li><a href="{{ route('admin') }}">Admin</a></li>
                                     @endif
                                     <li><a href="{{ route('get-logout') }}">Logout</a></li>
                                     @endauth

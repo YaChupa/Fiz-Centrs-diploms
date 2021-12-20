@@ -3,7 +3,7 @@
     <div class="starter-template">
                                     <div class="panel">
             
-                <h2>ЭТО СТРАНИЦА ДЛЯ ЗАПИСИ</h2>
+                <h2>Lapa lai ierakstities</h2>
             
         </div>
        

@@ -23,9 +23,9 @@ Auth::routes([
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 
 
-Route::get('/admin','App\Http\Controllers\HomeController@admin')->middleware('user_admin')->name('admin'); 
-
-Route::post('/admin/import','App\Http\Controllers\QueryController@importData')->middleware('user_admin')->name('scheduleImport'); 
+Route::get('/admin','App\Http\Controllers\HomeController@admin')->middleware('user_admin')->name('admin');  
+Route::post('/admin/import','App\Http\Controllers\QueryController@importData')->middleware('user_admin')->name('scheduleImport');
+Route::post('/admin/{id}','App\Http\Controllers\HomeController@changestatus')->middleware('user_admin')->name('changestatus');
 
 /*Route::get('/worker',function(){
     echo "Rabotnik";
@@ -36,7 +36,7 @@ Route::post('/admin/import','App\Http\Controllers\QueryController@importData')->
 
 
 Route::get('/profiles', 'App\Http\Controllers\ClientController@profiles')->name('profiles')->middleware('user_worker');
-Route::get('/profiles/search', 'App\Http\Controllers\ClientController@search')->name('search')->middleware('user_worker');
+//Route::get('/profiles/search', 'App\Http\Controllers\ClientController@search')->name('search')->middleware('user_worker');
 //Route::delete('/profiles/{profile}', 'App\Http\Controllers\ClientController@deleteprofile')->name('deleteprofile');
 Route::post('/profiles', 'App\Http\Controllers\ClientController@addclientDB')->name('addclientDB')->middleware('user_worker');
 Route::get('/profiles/addclient', 'App\Http\Controllers\ClientController@addclient')->name('addclient')->middleware('user_worker');

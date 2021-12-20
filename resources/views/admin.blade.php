@@ -5,21 +5,105 @@
 @section('content')
 <div class="container">
     <div class="starter-template">
-        <h1>V adminke</h1>
-    <div class="container">
-        <div class="row justify-content-center">
-            <form action="{{route('scheduleImport')}}" method="POST" enctype="multipart/form-data">
-                @CSRF
-                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Import schedule: </label>
+          
+                   
+<div class="thumbnail">
+        <div class="labels">
+            
+            
+                    </div>
+        <div class="caption">
+            
+<div class="row justify-content-center">
+            <div class="col-md-12">
+                <h1>Add shedule</h1>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                        </tr>
+                        <tr>
+                            <form action="{{route('scheduleImport')}}" method="POST" enctype="multipart/form-data">
+                            <td>                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Import schedule: </label>
                 <div class="col-lg-4">
-                <input type="file" name="files">
-                <input type="submit">
+                <input type="file" name="files"></td>
+                            <td> <input type="submit"></td>
+                        </tr>
+                         @CSRF
+
+               
             </form>
-        </div>
-    </div>
-    </div>
-</div>          
-    </div>
+                    </tbody>
+                </table>
+            </div>            
+        </div> 
+    
+   
+    
+    
+</div>
+</div> 
+     <div class="thumbnail">
+        <div class="labels">
+            
+            
+                    </div>
+        <div class="caption">
+            
+<div class="row justify-content-center">
+            <div class="col-md-12">
+                <h1>Change user status</h1>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>
+                               Id
+                            </th>
+                            <th>
+                                Name Surname
+                            </th>
+                            <th>
+                                 Email
+                            </th>
+                              <th>
+                                 Status
+                            </th>
+                        </tr>
+                          
+                               @foreach($users as $item)
+                                
+                               
+                        <tr>
+                            <td>{{$item->id}}</td>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->email}}</td>
+                            <td>{{$item->user_status}}</td>
+                             <td> 
+                                 <form action="{{route('changestatus',$item->id)}}" method="POST">
+                                    {{$item->id}}
+                                <div class="btn btn-outline-secondary" role="group">
+                                    @CSRF
+                                    <input type="submit" class="btn btn-outline-secondary" value="Change status">                           
+                                </div>  
+                                                            </form>
+                            </td>    
+                        </tr>
+                         @endforeach      
+                    </tbody>
+                </table>
+            </div>            
+        </div> 
+    
+   
+    
+    
+</div>
+</div> 
+</div>
+</div>
 
 
 @endsection

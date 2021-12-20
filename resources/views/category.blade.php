@@ -4,11 +4,11 @@
 
 @section('content')
     <div class="starter-template">
-        <h1>{{$category->name}} STRANICA DLA USLUGI I T.D</h1>
+        <h1>{{$category->name}} </h1>
     <p>
         {{$category->description}}
     </p>
-    <a href="{{route('query')}}">  ZAPISTSA NA 
+    <a href="{{route('query')}}">  Ierakstities uz  
                 @isset($category)
                 {{$category->name}}
                 @endisset

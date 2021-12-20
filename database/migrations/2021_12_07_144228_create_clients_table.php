@@ -20,6 +20,7 @@ class CreateClientsTable extends Migration
             $table->string('COVID_Sertifikats');
             $table->text('description') ->nullable();
             $table->text('phone') ->nullable();
+            $table->string('email');
             
             
             

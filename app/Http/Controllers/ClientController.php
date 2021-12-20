@@ -39,6 +39,7 @@ class ClientController extends Controller
         $client->COVID_Sertifikats = request('COVID_Sertifikats');
         $client->description = request('description');
         $client->phone = request('phone');
+        $client->email = request('email');
        
         $client->save();
         
@@ -78,19 +79,24 @@ class ClientController extends Controller
        return redirect('profiles');
     } 
     
-    public function search(Request $request){
-        
-        $search = $request->search;
-       // dd($search);
-         $profiles =  \App\Models\Client::where('name_surname', 'LIKE', "%{$search}%");
-         return view('profiles',compact('profiles'));
-    }
+//    public function search(Request $request){
+//        
+//        $search = $request->search;
+//       // dd($search);
+//         $profiles =  \App\Models\Client::where('name_surname', 'like', "%{$search}%");
+//         dd ($profiles);
+//         return view('profiles',compact('profiles'));
+//    }
     
     public function userprofile() {
-        
-        return view('userprofile');
+       $user=auth()->user();
+      $clientinfo = \App\Models\Client::where('email',$user->email)->get();   
+      $userprofile =[];
+      if($clientinfo  == [] ){
+      $userprofile = [];
+      }if($clientinfo != []){
+         $userprofile = $clientinfo; 
     }
-   
-    
-    
+    return view('userprofile',compact('userprofile'));
+    }
 }

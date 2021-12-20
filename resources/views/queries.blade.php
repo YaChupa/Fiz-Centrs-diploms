@@ -3,7 +3,7 @@
     <div class="starter-template">
                                     <div class="panel">
             
-                <h2>ЭТО СТРАНИЦА ZAPISEI DLA RABOTNIKA</h2>
+                <h2>Lapa prieks ierastiem uz pakalpojumiem</h2>
             
         </div>
        
@@ -21,24 +21,24 @@
             
 <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1>aaaa</h1>
+                <h1>Tabula ar ierakstiem</h1>
                 <table class="table">
                     <tbody>
                         <tr>
                             <th>
-                                #
+                                Name Surname
                             </th>
                             <th>
-                                dddd
+                                Sertifikats
                             </th>
                             <th>
-                               dddd
+                               Pakalpojums
                             </th>
                             <th>
-                                 aaa
+                                 Datums un Laiks
                             </th>
                             <th>
-                               aaa
+                               Apraksts
                             </th>
                         </tr>
                         
@@ -48,7 +48,7 @@
                             <td>{{$query->name_surname}}</td>
                             <td>{{$query->COVID_Sertifikats}}</td>
                             <td>{{$query->getCategory()->name}}</td>
-                            <td>{{$query->date}}{{$query->time}}</td>
+                            <td>{{$query->date}} {{$query->time}}</td>
                             <td>{{$query->description}}</td>
                              <td>                     
                                     {{$query->id}}
@@ -56,13 +56,6 @@
                                     @CSRF
                                     <input type="submit" class="btn btn-outline-secondary" value="Delete query">                           
                                 </div>  
-                            </td>
-                            <td>
-                                     <div class="btn btn-outline-secondary" role="group">
-                                    <a class="" type="button" href="">Display-none</a>
-                                    
-                                </div>                           
-                            </td>                               
                             </td>
                         </tr>
                         </form>

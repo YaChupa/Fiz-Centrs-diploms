@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="starter-template">
-        <h1>Domashanya stranica</h1>
+        <h1>Galvena Majas Lapa</h1>
 
     </div>
 @endsection

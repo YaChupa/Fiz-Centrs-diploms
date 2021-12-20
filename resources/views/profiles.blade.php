@@ -2,33 +2,74 @@
 @section('content')
     <div class="starter-template">
     <div class="panel">           
-            <h2>ЭТО СТРАНИЦА ВСЕХ МЕД.КАРТ</h2>
-            <a href="{{route('addclient')}}">  SOZDAT NOVUJU MED.KARTU</a>
+            <h2>Lapa ar visiem klientu med.kartiem</h2>
+            <a href="{{route('addclient')}}">  Izveidot jaunu med.karti</a>
             @if(session()->has('success'))
             <p class="alert alert-success">{{session()->get('success')}}</p>
             @endif
             
-            <form method="GET" action="{{ route('search') }}">
-                <div class="form-row">
-                    <div class="form-group col-md-10">
-                        <input type="text" class="form-control" id="search" name="search" placeholder="Search...">
-                    </div>
-                    <div class="form-group col-md-2">
-                        <button type="submit" class="btn btn-primary btn-block">Search</button>
-                    </div>
-                </div>
-
-            </form>
+            
     </div>
         </div>
-        
 
-        <div class="row">
-            @foreach($profiles as $profile)
-                @include ('card' , compact('profile'))
-            @endforeach
+<div class="row">
+          
+                   
+<div class="thumbnail">
+        <div class="labels">
+            
+            
+                    </div>
+        <div class="caption">
+            
+<div class="row justify-content-center">
+            <div class="col-md-12">
+                <h1>Klientu med.kartes</h1>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>
+                                Name Surname
+                            </th>
+                            <th>
+                                Covid Sertifikats
+                            </th>
+                            <th>
+                               Category
+                            </th>
+                        </tr>
+                        
+                          @foreach($profiles as $profile)
+                        <tr>
+                            <td>{{$profile->name_surname}}</td>
+                            <td>{{$profile->COVID_Sertifikats}}</td>
+                            <td> {{$profile->getCategory()->name}}
+                                    @isset($category)
+                                        {{$category->name}}
+                                    @endisset
+                            </td>
+                             <td>                     
+                                    <a href="{{route('updateprofile',[$profile->id]) }}"
+                   class="btn btn-primary"
+                   role="button">Change</a>
+                            </td>
+                            <td>
+                                     <a href="{{route('profile',[$profile->id]) }}"
+                   class="btn btn-default"
+                   role="button">About</a>                  
+                            </td>                               
+                            </td>
+                        </tr>
+                        @endforeach 
+                    </tbody>
+                </table>
+            </div>            
+        </div>  
             
         </div>
+    </div>
+               
+    </div>
         
 @endsection
 

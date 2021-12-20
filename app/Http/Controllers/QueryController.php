@@ -69,31 +69,29 @@ class QueryController extends Controller
    
    public function makequery(Request $request){
        $s= explode(';', $request->schedule);
+       
+    
        $a = explode(' ', $s[1]);
-     
+       
        
        $userinfo = DB::table('users')->where('name',$s[0])->pluck('id');
-      
+         print_r ($userinfo);
         $query = new \App\Models\Query();
         
+       
         $query->name_surname = $request->name_surname;
         $query->phone = $request->phone;
         $query->category_id = $request->category_id;
         $query->COVID_Sertifikats = $request->COVID_Sertifikats;
-        $query->description = $request->description;
+        $query->description = $request->description;   
         $query->date = $a[0];
-        $query->time = $a[1];
+        $query->time = $a[1];    
         $query->user_id = $userinfo[0];
-        
+
+         
         $query->save();
         
         $changestatus = DB::table('schedule')->where('name_surname',$s[0])->where('date_time',$s[1])->update(['datetime_status'=>0]);
-        
-        if($query){
-            session()->flash('successquery', 'Vi zapisalis');
-        }else {
-            session()->flash('errorquery', 'Ne poluchilos zapisatsa');
-        }
         
          return redirect('query');
    
@@ -117,16 +115,5 @@ class QueryController extends Controller
       return redirect('queries');     
 
     } 
-    
-   
-    
-    
-    /*public function userOrders()
-    {   
-        
-        
-        $orders= \App\Order::where('status',1)->where('user_id',$user->id)->get();
-        //dd($orders->get());
-        return view('auth.admin.index', compact('orders'));
-    }*/
+
 }

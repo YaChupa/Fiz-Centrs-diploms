@@ -11,6 +11,7 @@
             <file>file:/C:/wamp64/www/Centrs/app/Imports/ScheduleImport.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/HomeController.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/category.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/routes/console.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/addclient.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/config/app.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Models/Query.php</file>
@@ -21,7 +22,9 @@
             <file>file:/C:/wamp64/www/Centrs/app/Models/Client.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/MainController.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/admin.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/resources/views/auth/login.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/Auth/VerificationController.php</file>
+            <file>file:/C:/wamp64/www/Centrs/resources/views/auth/register.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/database/migrations/2021_12_07_144228_create_clients_table.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Middleware/CheckIsWorker.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/Auth/RegisterController.php</file>
@@ -34,6 +37,7 @@
             <file>file:/C:/wamp64/www/Centrs/resources/views/queries.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/Auth/LoginController.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/index.blade.php</file>
+            <file>file:/C:/wamp64/www/Centrs/database/migrations/2021_12_06_184802_create_categories_table.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Kernel.php</file>
             <file>file:/C:/wamp64/www/Centrs/resources/views/profiles.blade.php</file>
             <file>file:/C:/wamp64/www/Centrs/app/Http/Controllers/ClientController.php</file>
