@@ -17,11 +17,11 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{route('index')}}">FIZ Centrs</a>
+            <a class="navbar-brand" href="{{route('index')}}">FIZ CENTRS</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">  
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{route('index')}}">Galvena lapa</a></li>
+                <li ><a href="{{route('index')}}">Galvena lapa</a></li>
                 <li ><a href="{{route('categories')}}">Pakalpojumi</a></li>
                 <li ><a href="{{route('query')}}">Ierakstities</a></li> 
                 @auth
@@ -40,15 +40,15 @@
             <ul class="nav navbar-nav navbar-right">
                 
                                     @guest
-                                     <li><a href="{{ route('login') }}">Login</a></li>
-                                     <li><a href="{{ route('register') }}">Register</a></li>
+                                     <li><a href="{{ route('login') }}">Iejiet</a></li>
+                                     <li><a href="{{ route('register') }}">Registracija</a></li>
                                     @endguest
                                    
                                     @auth
                                     @if(auth()->user()->isAdmin())
-                                    <li><a href="{{ route('admin') }}">Admin</a></li>
+                                    <li><a href="{{ route('admin') }}">Admin panele</a></li>
                                     @endif
-                                    <li><a href="{{ route('get-logout') }}">Logout</a></li>
+                                    <li><a href="{{ route('get-logout') }}">Iziet</a></li>
                                     @endauth
                                  
                 
