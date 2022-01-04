@@ -32,7 +32,16 @@ class ClientController extends Controller
     } 
     public function addclientDB(){
        
-       $client = new \App\Models\Client();
+       
+        $client = new \App\Models\Client();
+        
+          request()->validate([
+             'name_surname' => 'required',
+             'COVID_Sertifikats' => 'required',
+             'email' => 'required',
+            
+        ]);  
+       
         
         $client->name_surname = request('name_surname');
         $client->category_id = request('category_id');
@@ -43,6 +52,8 @@ class ClientController extends Controller
        
         $client->save();
         
+       
+         
         if($client){
             session()->flash('success', 'Dobavili clienta');
         }else {
@@ -75,6 +86,13 @@ class ClientController extends Controller
         $client->phone = request('phone');
        
         $client->save();
+        
+         if($client){
+            session()->flash('success', 'Imenili clienta');
+        }else {
+            session()->flash('error', 'Ne dobavili clienta');
+        }
+        
        // return redirect('/profiles')->with('success','Izmeneno ');
        return redirect('profiles');
     } 

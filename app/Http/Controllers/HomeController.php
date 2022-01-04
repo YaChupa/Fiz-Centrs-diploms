@@ -43,8 +43,14 @@ class HomeController extends Controller
        }else{
            DB::table('users')->where('id',$idinfo)->update(['user_status'=>0]);
        }
+       
+        if($a){
+            session()->flash('success', 'Changed status');
+        }
        return redirect('admin');     
 
+       
+       
     } 
     
 }

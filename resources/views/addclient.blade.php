@@ -1,10 +1,19 @@
 @extends('master')
+
 @section('content')
     <div class="starter-template">
                                     <div class="panel">
             
                 <h2>ЭТО СТРАНИЦА ДЛЯ CОЗДАНИЯ МЕД.КАРТЫ</h2>
-            
+                @error('name_surname')
+                                <div class="alert alert-danger">Zapolni pole - Name,Surname </div>                                 
+              @enderror
+              @error('email')
+                                <div class="alert alert-danger">Zapolni pole - Email</div>                                 
+                                @enderror
+             @error('COVID_Sertifikats')
+                                <div class="alert alert-danger">Zapolni pole CoViD sertifikat</div>                                 
+             @enderror
         </div>
        
         </div><div class="container">
@@ -17,6 +26,7 @@
                         <div class="form-group">
                             <label for="name" class="control-label col-lg-offset-3 col-lg-2">Name,Surname: </label>
                             <div class="col-lg-4">
+                                
                                 <input type="text" name="name_surname" id="name" value="" class="form-control">
                             </div>
                         </div>
@@ -34,6 +44,7 @@
                         <div class="form-group">
                             <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Email: </label>
                             <div class="col-lg-4">
+                                
                                 <input type="text" name="email" id="phone" value="" class="form-control">
                             </div>
                         </div>
@@ -58,6 +69,7 @@
                          <div class="form-group">
                             <label for="phone" class="control-label col-lg-offset-3 col-lg-2">COVID Sertifikat (Ir/Nav): </label>
                             <div class="col-lg-4">
+                               
                                 <input type="text" name="COVID_Sertifikats" id="phone" value="" class="form-control">
                             </div>
                         </div>

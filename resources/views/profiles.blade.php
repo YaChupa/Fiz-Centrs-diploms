@@ -37,6 +37,9 @@
                             <th>
                                Category
                             </th>
+                             <th>
+                               Email
+                            </th>
                         </tr>
                         
                           @foreach($profiles as $profile)
@@ -48,6 +51,7 @@
                                         {{$category->name}}
                                     @endisset
                             </td>
+                            <td>{{$profile->email}}</td>
                              <td>                     
                                     <a href="{{route('updateprofile',[$profile->id]) }}"
                    class="btn btn-primary"

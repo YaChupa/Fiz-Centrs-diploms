@@ -4,27 +4,36 @@
                                     <div class="panel">
             
                 <h2>Lapa lai ierakstities</h2>
-            
+             @if(session()->has('success'))
+            <p class="alert alert-success">{{session()->get('success')}}</p>
+            @endif
+            @error('name_surname')
+                                <div class="alert alert-danger">Zapolni pole - Name,Surname </div>                                 
+              @enderror
+              @error('phone')
+                                <div class="alert alert-danger">Zapolni pole - Telefone</div>                                 
+                                @enderror
+             @error('COVID_Sertifikats')
+                                <div class="alert alert-danger">Zapolni pole CoViD sertifikat</div>                                 
+             @enderror
         </div>
        
         </div><div class="container">
     <div class="starter-template">
     <div class="container">
         <div class="row justify-content-center">
-             @if(session()->has('success'))
-            <p class="alert alert-success">{{session()->get('successquery')}}</p>
-            @endif
+            
             <form action="{{route('makequery')}}" method="POST">
                 <div>
                     <div class="container">
                         <div class="form-group">
-                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">Name,Surname: </label>
+                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">Vards,Uzvards: </label>
                             <div class="col-lg-4">
                                 <input type="text" name="name_surname" id="name" value="" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">Phone: </label>
+                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">Tālrunis: </label>
                             <div class="col-lg-4">
                                 <input type="text" name="phone" id="name" value="" class="form-control">
                             </div>
@@ -41,7 +50,7 @@
                         <br>
                         <br>
                         <div class="form-group">
-                                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Category: </label>
+                                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Pakalpojums: </label>
                                 <div class="col-lg-4">
                               <select name="category_id">                  
                              @foreach($categoryinfo as $item)

@@ -79,6 +79,15 @@ class QueryController extends Controller
         $query = new \App\Models\Query();
         
        
+        request()->validate([
+             'name_surname' => 'required',
+             'COVID_Sertifikats' => 'required',
+             'phone' => 'required',
+            
+        ]);  
+        
+        
+        
         $query->name_surname = $request->name_surname;
         $query->phone = $request->phone;
         $query->category_id = $request->category_id;
@@ -93,6 +102,11 @@ class QueryController extends Controller
         
         $changestatus = DB::table('schedule')->where('name_surname',$s[0])->where('date_time',$s[1])->update(['datetime_status'=>0]);
         
+        
+        if($query){
+            session()->flash('success', 'Vi zapisalis');
+        }
+        
          return redirect('query');
    
     }
@@ -100,7 +114,9 @@ class QueryController extends Controller
     
     public function queries() {
          $user=auth()->user();
-         $workerquieries= \App\Models\Query::where('user_id',$user->id)->get();         
+         $workerquieries= \App\Models\Query::where('user_id',$user->id)->get();
+
+         
         return view('queries', [
             'queries' => $workerquieries]);        
     }
@@ -111,7 +127,14 @@ class QueryController extends Controller
        $idinfo =  $a[0]['user_id'];
        $datetimeinfo = $a[0]['date'].' '.$a[0]['time'];
       DB::table('schedule')->where('user_id',$idinfo)->where('date_time',$datetimeinfo)->update(['datetime_status'=>1]);
-      \App\Models\Query::where('id',$id)->delete();     
+      \App\Models\Query::where('id',$id)->delete();   
+      
+       if($a){
+            session()->flash('success', 'Udalili');
+        }else {
+            session()->flash('error', 'Ne dobavili clienta');
+        }
+      
       return redirect('queries');     
 
     } 

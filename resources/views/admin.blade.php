@@ -5,7 +5,9 @@
 @section('content')
 <div class="container">
     <div class="starter-template">
-          
+    @if(session()->has('success'))
+            <p class="alert alert-success">{{session()->get('success')}}</p>
+            @endif      
                    
 <div class="thumbnail">
         <div class="labels">
@@ -83,7 +85,6 @@
                             <td>{{$item->user_status}}</td>
                              <td> 
                                  <form action="{{route('changestatus',$item->id)}}" method="POST">
-                                    {{$item->id}}
                                 <div class="btn btn-outline-secondary" role="group">
                                     @CSRF
                                     <input type="submit" class="btn btn-outline-secondary" value="Change status">                           

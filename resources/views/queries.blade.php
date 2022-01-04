@@ -4,7 +4,9 @@
                                     <div class="panel">
             
                 <h2>Lapa prieks ierastiem uz pakalpojumiem</h2>
-            
+            @if(session()->has('success'))
+            <p class="alert alert-success">{{session()->get('success')}}</p>
+            @endif
         </div>
        
         </div>
