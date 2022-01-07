@@ -1,43 +1,35 @@
 @extends('master')
 @section('content')
     <div class="starter-template">
-                                    <div class="panel">
-            
-                <h2>Lapa prieks ierastiem uz pakalpojumiem</h2>
+     <div class="panel">
+
             @if(session()->has('success'))
             <p class="alert alert-success">{{session()->get('success')}}</p>
             @endif
         </div>
-       
-        </div>
+    </div>
 
-    <div class="row">
-          
-                   
+    <div class="row">                  
 <div class="thumbnail">
-        <div class="labels">
-            
-            
-                    </div>
-        <div class="caption">
-            
+<div class="labels"></div>
+<div class="caption">         
 <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1>Tabula ar ierakstiem</h1>
+                <h1>TABULA AR PIERAKSTIEM</h1>
                 <table class="table">
                     <tbody>
                         <tr>
                             <th>
-                                Name Surname
+                               Vārds,Uzvāŗds
                             </th>
                             <th>
-                                Sertifikats
+                               COVID-Sertifikats
                             </th>
                             <th>
                                Pakalpojums
                             </th>
                             <th>
-                                 Datums un Laiks
+                               Datums un Laiks
                             </th>
                             <th>
                                Apraksts
@@ -50,13 +42,13 @@
                             <td>{{$query->name_surname}}</td>
                             <td>{{$query->COVID_Sertifikats}}</td>
                             <td>{{$query->getCategory()->name}}</td>
-                            <td>{{$query->date}} {{$query->time}}</td>
+                            <td>{{$query->time}} {{$query->date}} </td>
                             <td>{{$query->description}}</td>
                              <td>                     
                                     {{$query->id}}
                                 <div class="btn btn-outline-secondary" role="group">
                                     @CSRF
-                                    <input type="submit" class="btn btn-outline-secondary" value="Delete query">                           
+                                    <input type="submit" class="btn btn-danger" value="Izdzēst pierakstu">                           
                                 </div>  
                             </td>
                         </tr>
@@ -65,10 +57,8 @@
                     </tbody>
                 </table>
             </div>            
-        </div>  
-            
-        </div>
-    </div>
-               
-    </div>
+        </div>       
+     </div>
+</div>
+</div>
 @endsection

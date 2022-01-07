@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function profiles(){
         $profiles = \App\Models\Client::get(); 
         return view('profiles',compact('profiles'));
@@ -37,9 +42,7 @@ class ClientController extends Controller
         
           request()->validate([
              'name_surname' => 'required',
-             'COVID_Sertifikats' => 'required',
-             'email' => 'required',
-            
+             'COVID_Sertifikats' => 'required',          
         ]);  
        
         
@@ -48,16 +51,16 @@ class ClientController extends Controller
         $client->COVID_Sertifikats = request('COVID_Sertifikats');
         $client->description = request('description');
         $client->phone = request('phone');
-        $client->email = request('email');
+        $client->user_email = request('user_email');
        
         $client->save();
         
        
          
         if($client){
-            session()->flash('success', 'Dobavili clienta');
+            session()->flash('success', 'Jauna medicīnas karte tiek izveidota!');
         }else {
-            session()->flash('error', 'Ne dobavili clienta');
+            session()->flash('error', 'Error');
         }
         return redirect('profiles');
                 
@@ -69,6 +72,8 @@ class ClientController extends Controller
          $categoryinfo = \App\Models\Category::all();
       //return view('updateprofile', compact('updateprofile','categoryinfo'));
       
+         
+         
       return view('updateprofile', [
             'updateprofile' => $updateprofile,
             'categoryinfo' => $categoryinfo]);
@@ -79,36 +84,36 @@ class ClientController extends Controller
         $client = \App\Models\Client::find($id);
         //$client = Client::find($id);
         
+        request()->validate([
+             'name_surname' => 'required',
+             'COVID_Sertifikats' => 'required',          
+        ]);  
+        
         $client->name_surname = request('name_surname');
         $client->category_id = request('category_id');
         $client->COVID_Sertifikats = request('COVID_Sertifikats');
         $client->description = request('description');
         $client->phone = request('phone');
+        $client->user_email = request('user_email');
        
         $client->save();
         
          if($client){
-            session()->flash('success', 'Imenili clienta');
+            session()->flash('success', 'Medicīnas karte tiek izmainīta!');
         }else {
-            session()->flash('error', 'Ne dobavili clienta');
+            session()->flash('error', 'Error');
         }
         
        // return redirect('/profiles')->with('success','Izmeneno ');
        return redirect('profiles');
     } 
     
-//    public function search(Request $request){
-//        
-//        $search = $request->search;
-//       // dd($search);
-//         $profiles =  \App\Models\Client::where('name_surname', 'like', "%{$search}%");
-//         dd ($profiles);
-//         return view('profiles',compact('profiles'));
-//    }
-    
     public function userprofile() {
        $user=auth()->user();
-      $clientinfo = \App\Models\Client::where('email',$user->email)->get();   
+       //echo $user;
+       $clientinfo = \App\Models\Client::where('user_email',$user->email)->get();  
+      // echo $clientinfo;
+        //echo $clientinfo;
       $userprofile =[];
       if($clientinfo  == [] ){
       $userprofile = [];

@@ -3,7 +3,14 @@
     <div class="starter-template">
                                     <div class="panel">
             
-                <h2>ЭТО СТРАНИЦА ИЗМЕНЕНИЯ МЕД.КАРТЫ</h2>
+                <h2>IZMAINĪT MEDICĪNAS KARTI</h2>
+                
+                 @error('name_surname')
+                                <div class="alert alert-danger">Lauks – Vārds,Uzvārds - ir obligāts!</div>                                 
+              @enderror
+             @error('COVID_Sertifikats')
+                                <div class="alert alert-danger">Lauks – COVID-Sertifikats - ir obligāts!</div>                                 
+             @enderror
                 <h3>{{$updateprofile->name_surname}}</h3>
         </div>
        
@@ -15,7 +22,7 @@
                 <div>
                     <div class="container">
                         <div class="form-group">
-                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">Name,Surname: </label>
+                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">Vārds,Uzvārds: </label>
                             <div class="col-lg-4">
                                 <input type="text" name="name_surname" id="name" value="{{$updateprofile->name_surname}}" class="form-control">
                             </div>
@@ -23,7 +30,7 @@
                         <br>
                         <br>
                         <div class="form-group">
-                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Phone: </label>
+                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Tālrunis: </label>
                             <div class="col-lg-4">
                                 <input type="text" name="phone" id="phone" value="{{$updateprofile->phone}}" class="form-control">
                             </div>
@@ -31,15 +38,15 @@
                         <br>
                         <br>
                         <div class="form-group">
-                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Email: </label>
+                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">E-pasts: </label>
                             <div class="col-lg-4">
-                                <input type="text" name="phone" id="phone" value="{{$updateprofile->email}}" class="form-control">
+                                <input type="text" name="user_email" id="user_email" value="{{$updateprofile->user_email}}" class="form-control">
                             </div>
                         </div>
                         <br>
                         <br>
                             <div class="form-group">
-                                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Category: </label>
+                                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Pakalpojums: </label>
                                 <div class="col-lg-4">
                               <select name="category_id">                  
                              @foreach($categoryinfo as $item)
@@ -52,7 +59,7 @@
                         <br>
                         <br>
                          <div class="form-group">
-                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">COVID Sertifikat (Ir/Nav): </label>
+                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">COVID-Sertifikats: </label>
                             <div class="col-lg-4">
                                 <input type="text" name="COVID_Sertifikats" id="phone" value="{{$updateprofile->COVID_Sertifikats}}" class="form-control">
                             </div>
@@ -60,7 +67,7 @@
                         <br>
                         <br>
                           <div class="form-group">
-                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Description: </label>
+                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">Apraksts: </label>
                             <div class="col-lg-4">
                                 <textarea type="text" name="description" id="phone" value="" class="form-control">{{$updateprofile->description}}</textarea>
                             </div>
@@ -71,7 +78,7 @@
                     </div>
                     <br> 
                       @CSRF
-                      <input type="submit" class="btn btn-outline-secondary" value="UPDATE">                  
+                      <input type="submit" class="btn btn-outline-secondary" value="Izmainīt">                  
                 </div>
             </form>
         </div>

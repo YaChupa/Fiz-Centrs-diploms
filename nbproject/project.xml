@@ -7,8 +7,11 @@
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>elseif</word>
+            <word>endauth</word>
+            <word>enderror</word>
             <word>endforeach</word>
             <word>endforeacj</word>
+            <word>endguest</word>
             <word>endisset</word>
             <word>foreach</word>
             <word>isset</word>

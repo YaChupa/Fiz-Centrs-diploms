@@ -24,7 +24,7 @@
             </p>          
         </div>
             <p>Talrunis - {{$item->phone}}</p>
-            <p>Email - {{$item->email}}</p>
+            <p>Email - {{$item->user_email}}</p>
             <p>COVID Sertifikats - {{$item->COVID_Sertifikats}}</p>
             <p>Kategorija - {{$item->getCategory()->name}}</p>
             <p>Informacija par pacientu - {{$item->description}}</p>

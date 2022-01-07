@@ -45,12 +45,36 @@ class HomeController extends Controller
        }
        
         if($a){
-            session()->flash('success', 'Changed status');
+            session()->flash('success', 'Status tiek izmainīts');
         }
        return redirect('admin');     
 
        
        
     } 
+    public function addcategory(){
+        return view('addcategory');
+    }
     
+    
+     public function addcategoryDB(){
+        
+       $category = new \App\Models\Category();
+        
+          request()->validate([
+             'name' => 'required',
+             'description' => 'required' 
+        ]);  
+       
+        $category->name = request('name');
+        $category->description = request('description');
+        $category->save();
+        
+        if($category){
+            session()->flash('success', 'Pakalpojums pievienots!');
+        }
+        
+       return redirect('categories');
+                
+    }
 }

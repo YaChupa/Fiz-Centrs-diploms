@@ -18,7 +18,7 @@
             
 <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1>Add shedule</h1>
+                <h1>Pievienot grafiku</h1>
                 <table class="table">
                     <tbody>
                         <tr>
@@ -29,7 +29,7 @@
                         </tr>
                         <tr>
                             <form action="{{route('scheduleImport')}}" method="POST" enctype="multipart/form-data">
-                            <td>                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Import schedule: </label>
+                            <td>                <label for="name" class="control-label col-lg-offset-3 col-lg-2">Pievienot jaunu darba grafiku: </label>
                 <div class="col-lg-4">
                 <input type="file" name="files"></td>
                             <td> <input type="submit"></td>
@@ -57,7 +57,7 @@
             
 <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1>Change user status</h1>
+                <h1>Izmainit lietotaja statusu</h1>
                 <table class="table">
                     <tbody>
                         <tr>

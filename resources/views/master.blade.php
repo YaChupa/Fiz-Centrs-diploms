@@ -26,16 +26,24 @@
             <ul class="nav navbar-nav">
                 <li ><a href="{{route('index')}}">Galvena lapa</a></li>
                 <li ><a href="{{route('categories')}}">Pakalpojumi</a></li>
-                <li ><a href="{{route('query')}}">Ierakstities</a></li> 
+                @guest
+                <li ><a href="{{route('query')}}">Pierakstities</a></li> 
+                @else
                 @auth
                 @if(auth()->user()->isUser())
-                <li ><a href="{{route('userprofile')}}">Medicinas karte</a></li>
+                <li ><a href="{{route('query')}}">Pierakstities</a></li> 
+                @endif
+                @endauth
+                @endguest
+                @auth
+                @if(auth()->user()->isUser())
+                <li ><a href="{{route('userprofile')}}">Medicīnas karte</a></li>
                 @endif
                 @endauth
                 @auth
                 @if(auth()->user()->isWorker())
-                <li ><a href="{{route('profiles')}}">Klienti</a></li>
-                <li ><a href="{{route('queries')}}">Ieraksti</a></li>  
+                <li ><a href="{{route('profiles')}}">Kartes</a></li>
+                <li ><a href="{{route('queries')}}">Pieraksti</a></li>  
                 @endif
                 @endauth
             </ul>
@@ -43,13 +51,13 @@
             <ul class="nav navbar-nav navbar-right">
                 
                                     @guest
-                                     <li><a href="{{ route('login') }}">Iejiet</a></li>
-                                     <li><a href="{{ route('register') }}">Registracija</a></li>
+                                     <li><a href="{{ route('login') }}">Ieiet</a></li>
+                                     <li><a href="{{ route('register') }}">Reģistrēties</a></li>
                                     @endguest
                                    
                                     @auth
                                     @if(auth()->user()->isAdmin())
-                                    <li><a href="{{ route('admin') }}">Admin panele</a></li>
+                                    <li><a href="{{ route('admin') }}">Administratora panele</a></li>
                                     @endif
                                     <li><a href="{{ route('get-logout') }}">Iziet</a></li>
                                     @endauth

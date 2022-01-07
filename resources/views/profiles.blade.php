@@ -2,8 +2,7 @@
 @section('content')
     <div class="starter-template">
     <div class="panel">           
-            <h2>Lapa ar visiem klientu med.kartiem</h2>
-            <a href="{{route('addclient')}}">  Izveidot jaunu med.karti</a>
+            <a href="{{route('addclient')}}">  <h2>Jauna medicīnas karte</h2></a>
             @if(session()->has('success'))
             <p class="alert alert-success">{{session()->get('success')}}</p>
             @endif
@@ -24,21 +23,24 @@
             
 <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1>Klientu med.kartes</h1>
+                <h1>KLIENTU MEDICĪNAS KARTES</h1>
                 <table class="table">
                     <tbody>
                         <tr>
                             <th>
-                                Name Surname
+                                Vārds,Uzvārds
                             </th>
                             <th>
-                                Covid Sertifikats
+                                COVID-Sertifikats
                             </th>
                             <th>
-                               Category
+                               Pakalpojums
                             </th>
                              <th>
-                               Email
+                               E-pasts
+                            </th>
+                            <th>
+                               Tālrunis
                             </th>
                         </tr>
                         
@@ -51,16 +53,17 @@
                                         {{$category->name}}
                                     @endisset
                             </td>
-                            <td>{{$profile->email}}</td>
+                            <td>{{$profile->user_email}}</td>
+                            <td>{{$profile->phone}}</td>
                              <td>                     
                                     <a href="{{route('updateprofile',[$profile->id]) }}"
                    class="btn btn-primary"
-                   role="button">Change</a>
+                   role="button">Izmainīt</a>
                             </td>
                             <td>
                                      <a href="{{route('profile',[$profile->id]) }}"
                    class="btn btn-default"
-                   role="button">About</a>                  
+                   role="button">Informācija</a>                  
                             </td>                               
                             </td>
                         </tr>

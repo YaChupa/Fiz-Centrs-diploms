@@ -16,10 +16,10 @@
         </div>
         <div class="profile">
             <p>Talrunis - {{$profile->phone}}</p>
-            <p>Email - {{$profile->email}}</p>
-            <p>COVID Sertifikats - {{$profile->COVID_Sertifikats}}</p>
-            <p>Kategorija - {{$profile->getCategory()->name}}</p>
-            <p>Informacija par pacientu - {{$profile->description}}</p>
+            <p>E-pasts - {{$profile->email}}</p>
+            <p>COVID-Sertifikats - {{$profile->COVID_Sertifikats}}</p>
+            <p>Pakalpojums - {{$profile->getCategory()->name}}</p>
+            <p>Informacija par pacientu jeb apraksts - {{$profile->description}}</p>
         </div>
             
         </div>
