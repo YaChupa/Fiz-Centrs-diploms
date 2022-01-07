@@ -39,7 +39,7 @@ Route::post('/queries/{id}', 'App\Http\Controllers\QueryController@deletequeries
 Route::get('/query', 'App\Http\Controllers\MainController@query')->name('query');
 Route::post('/query', 'App\Http\Controllers\MainController@makequery')->name('makequery');
 
-Route::get('/userprofile', 'App\Http\Controllers\ClientController@userprofile')->name('userprofile');
+Route::get('/userprofile', 'App\Http\Controllers\ClientController@userprofile')->name('userprofile')->middleware('user_user');
 
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');

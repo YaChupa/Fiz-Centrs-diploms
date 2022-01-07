@@ -53,8 +53,7 @@
                               <select name="category_id">                  
                              @foreach($categoryinfo as $item)
                              <option value="{{$item->id}}">{{$item->name}}</option>
-                              @endforeach  
-                              
+                              @endforeach                   
                              </select>
                                 </div>
                         </div>
@@ -66,11 +65,10 @@
                         <div class="form-group">
                             <label for="name" class="control-label col-lg-offset-3 col-lg-2">Specialists un Laiks: </label>
                             <div class="col-lg-4">
-                                <select name="schedule">                  
+                                <select name="schedule" >                  
                              @foreach($info as $item)
                              <option value="{{$item}}">{{$item}}</option>
-                              @endforeach  
-                              
+                              @endforeach           
                              </select>
                             </div>
                         </div>
@@ -85,7 +83,16 @@
                     </div>
                     <br>
                     @CSRF
-                     <input type="submit" class="btn btn-outline-secondary" value="Pierakstīties">      
+                    @guest
+               <input type="submit" class="btn btn-outline-secondary" value="Pierakstīties">      
+                @else
+                @auth
+                @if(auth()->user()->isUser())
+                <input type="submit" class="btn btn-outline-secondary" value="Pierakstīties">       
+                @endif
+                @endauth
+                @endguest
+                     
                 </div>
             </form>
         </div>

@@ -48,12 +48,14 @@
                             <div class="form-group">
                                 <label for="name" class="control-label col-lg-offset-3 col-lg-2">Pakalpojums: </label>
                                 <div class="col-lg-4">
-                              <select name="category_id">                  
+                                    <div class ="select">
+                              <select name="category_id" >                  
                              @foreach($categoryinfo as $item)
                              <option value="{{$item->id}}"  {{$item->id == $updateprofile->category_id  ? 'selected' : ''}}>{{$item->name}}</option>
                               @endforeach  
                               
                              </select>
+                                        </div>
                                 </div>
                             </div>
                         <br>

@@ -45,7 +45,6 @@
                             <td>{{$query->time}} {{$query->date}} </td>
                             <td>{{$query->description}}</td>
                              <td>                     
-                                    {{$query->id}}
                                 <div class="btn btn-outline-secondary" role="group">
                                     @CSRF
                                     <input type="submit" class="btn btn-danger" value="Izdzēst pierakstu">                           

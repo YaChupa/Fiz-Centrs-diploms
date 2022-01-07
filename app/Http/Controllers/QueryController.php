@@ -49,7 +49,7 @@ class QueryController extends Controller
            $error_code = $e->errorInfo[1];
            return back()->withErrors('There was a problem uploading the data!');
        }
-       return back()->withSuccess('Great! Data has been successfully uploaded.');
+       return back()->withSuccess('Darba grafiks ir pievienots!');
    }
    
    

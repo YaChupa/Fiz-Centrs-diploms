@@ -8,11 +8,24 @@
     <p>
         {{$category->description}}
     </p>
-    <a href="{{route('query')}}">  Ierakstities uz  
+                @guest
+                 <a href="{{route('query')}}">  Pierakstīties uz  
                 @isset($category)
                 {{$category->name}}
                 @endisset
             </a>
+                @else
+                @auth
+                @if(auth()->user()->isUser())
+                 <a href="{{route('query')}}">  Pierakstīties uz  
+                @isset($category)
+                {{$category->name}}
+                @endisset
+            </a>
+                @endif
+                @endauth
+                @endguest
+   
     </div>
 @endsection
 

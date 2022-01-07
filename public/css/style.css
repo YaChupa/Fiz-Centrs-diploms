@@ -8,16 +8,13 @@ and open the template in the editor.
     Author     : user
 */
 
-.wtf{
-      color: blue;
-}
+
 
 banner {
    
   text-align: center;
-  color: orange;
+  color: black;
   font-size: 2em;
-  font-weight: bold;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -34,9 +31,8 @@ banner {
 .banner-home{
   background-color: black;
   text-align: center;
-  color: orange;
+  color: black;
   font-size: 2em;
-  font-weight: bold;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -53,9 +49,8 @@ banner {
 
 .bannernxtlvl {
     text-align: center;
-    color: orange;
-    font-size: 150%;
-    font-weight: bold;
+    color: black;
+    font-size: 120%;
     width: 100%;
 }
 
@@ -111,7 +106,7 @@ banner {
 }
 
     .rcb-cmp-item-cnt:hover #proz {
-        opacity: 0.15;
+        opacity: 0.1;
     }
     .rcb-cmp-item-cnt:hover .sostav {
         top: 30%;

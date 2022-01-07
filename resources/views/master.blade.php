@@ -20,7 +20,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{route('index')}}">FIZ CENTRS</a>
+            <a class="navbar-brand" href="{{route('index')}}">FIZ un FIT CENTRS</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">  
             <ul class="nav navbar-nav">
