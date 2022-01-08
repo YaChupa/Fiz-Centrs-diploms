@@ -7,14 +7,14 @@
         <p class="alert alert-success">{{session()->get('success')}}</p>
         @endif
         @error('name_surname')
-        <div class="alert alert-danger">Lauks – Vārds,Uzvārds - ir obligāts!</div>                                 
+        <div class="alert alert-danger">{{ $message }}</div>                                 
         @enderror
         @error('phone')
-        <div class="alert alert-danger">Lauks – Tālrunis - ir obligāts!</div>                                 
+        <div class="alert alert-danger">{{ $message }}</div>                                 
         @enderror
         @error('COVID_Sertifikats')
-        <div class="alert alert-danger">Lauks – COVID Sertifikāts - ir obligāts!</div>                                 
-        @enderror
+        <div class="alert alert-danger">{{ $message }}</div>                                 
+        @enderror 
     </div>
 </div>
 <div class="container">
@@ -44,7 +44,6 @@
                         </div>
                         <br>
                         <br>
-                        
                         <br>
                         <br>
                         <div class="form-group">
@@ -57,9 +56,8 @@
                              </select>
                                 </div>
                         </div>
-                         <br>
                         <br>
-                        
+                        <br>
                         <br>
                         <br>
                         <div class="form-group">
@@ -72,7 +70,7 @@
                              </select>
                             </div>
                         </div>
-                     <br>
+                        <br>
                         <br>
                             <div class="form-group">
                                 <label for="name" class="control-label col-lg-offset-3 col-lg-2">Apraksts: </label>
@@ -91,12 +89,11 @@
                 <input type="submit" class="btn btn-outline-secondary" value="Pierakstīties">       
                 @endif
                 @endauth
-                @endguest
-                     
-                </div>
-            </form>
+                @endguest    
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 @endsection

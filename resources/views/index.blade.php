@@ -2,10 +2,9 @@
 @section('title')
 
 @section('content')
-    <div class="starter-template">
+<div class="starter-template">
         <h1>FIZIOTERAPIJAS UN FITNESA CENTRS</h1>
-
-<div class="main-coll-news">
+    <div class="main-coll-news">
         <table class="bannernxtlvl">
             <tr>
                 <th>
@@ -13,12 +12,9 @@
                 </th>
             </tr>
         </table>
-</div>
-
-        
-        
-            <div class="rcb-cmp-list">
-                <div class="rcb-cmp-item">
+    </div>
+    <div class="rcb-cmp-list">
+            <div class="rcb-cmp-item">
                     <div class="rcb-cmp-item-cnt">
                         <img src="images/adrese.png" id="proz" alt="Something went wrong" />
                         <table class="sostav">
@@ -35,12 +31,10 @@
                                 <th></th>
                             </tr>
                         </table>
-
                         <div class="product-name">Adrese</div>
                         <br />
-
                     </div>
-                </div>
+            </div>
                 <div class="rcb-cmp-item">
                     <div class="rcb-cmp-item-cnt">
                         <img src="images/kanceleja.png" id="proz" alt="Something went wrong" />
@@ -58,39 +52,35 @@
                                 <th></th>
                             </tr>
                         </table>
-
                         <div class="product-name">Kanceleja</div>
                         <br />
-
                     </div>
                 </div>
-                <div class="rcb-cmp-item">
-                    <div class="rcb-cmp-item-cnt">
-                        <img src="images/darbalaiks.png" id="proz" alt="Something went wrong" />
-                        <table class="sostav">
-                            <tr>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th>P.- Pk. 8:00-16:00</th>
-                                <th></th>
-                            </tr>
-                             <tr>
-                                <th>S.- Slēgts</th>
-                                <th></th>
-                            </tr>
-                             <tr>
-                                <th>Sv.- Slēgts</th>
-                                <th></th>
-                            </tr>
-                        </table>
-
-                        <div class="product-name">Darba laiks</div>
-                        <br />
-
-                    </div>
-                </div>
+        <div class="rcb-cmp-item">
+            <div class="rcb-cmp-item-cnt">
+                <img src="images/darbalaiks.png" id="proz" alt="Something went wrong" />
+                <table class="sostav">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>P.- Pk. 8:00-16:00</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>S.- Slēgts</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>Sv.- Slēgts</th>
+                        <th></th>
+                    </tr>
+                </table>
+                <div class="product-name">Darba laiks</div>
+                <br />
             </div>
+        </div>
     </div>
+</div>
 @endsection

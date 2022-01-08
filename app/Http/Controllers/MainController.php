@@ -53,11 +53,17 @@ class MainController extends Controller
         $query = new \App\Models\Query();
  
         request()->validate([
-             'name_surname' => 'required',
-             'COVID_Sertifikats' => 'required',
-             'phone' => 'required',
-            
-        ]);  
+             'name_surname' => ['required','max:255'],
+             'COVID_Sertifikats' => ['required','max:255'],
+             'phone' => ['required','max:255'],
+            ],[
+             'name_surname.required' => 'Lauks – Vārds, Uzvārds - ir obligāts!',   
+             'COVID_Sertifikats.required' => 'Lauks – COVID Sertifikats - ir obligāts!',  
+             'phone.required' => 'Lauks – Tālrunis - ir obligāts!',
+             'name_surname.max' => 'Lauks - Vārds, Uzvārds - nedrīkst pārsniegt 255 rakstzīmes!',
+             'COVID_Sertifikats.max' => 'Lauks - COVID Sertifikats - nedrīkst pārsniegt 255 rakstzīmes!',
+             'phone.max' => 'Lauks - Tālrunis - nedrīkst pārsniegt 255 rakstzīmes!',
+            ]);  
  
         $query->name_surname = $request->name_surname;
         $query->phone = $request->phone;

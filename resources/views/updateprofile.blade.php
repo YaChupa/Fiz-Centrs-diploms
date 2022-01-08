@@ -1,20 +1,18 @@
 @extends('master')
 @section('content')
-    <div class="starter-template">
-                                    <div class="panel">
-            
+<div class="starter-template">
+    <div class="panel">        
                 <h2>IZMAINĪT MEDICĪNAS KARTI</h2>
-                
-                 @error('name_surname')
-                                <div class="alert alert-danger">Lauks – Vārds,Uzvārds - ir obligāts!</div>                                 
-              @enderror
-             @error('COVID_Sertifikats')
-                                <div class="alert alert-danger">Lauks – COVID-Sertifikats - ir obligāts!</div>                                 
-             @enderror
-                <h3>{{$updateprofile->name_surname}}</h3>
-        </div>
-       
-        </div><div class="container">
+            @error('name_surname')
+                <div class="alert alert-danger">{{ $message }}</div>                                 
+            @enderror
+            @error('COVID_Sertifikats')
+                <div class="alert alert-danger">{{ $message }}</div>                                 
+            @enderror
+            <h3>{{$updateprofile->name_surname}}</h3>
+    </div>     
+</div>
+<div class="container">
     <div class="starter-template">
     <div class="container">
         <div class="row justify-content-center">
@@ -53,9 +51,8 @@
                              @foreach($categoryinfo as $item)
                              <option value="{{$item->id}}"  {{$item->id == $updateprofile->category_id  ? 'selected' : ''}}>{{$item->name}}</option>
                               @endforeach  
-                              
                              </select>
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         <br>
@@ -76,7 +73,6 @@
                         </div>
                         <br>
                         <br>
-                        
                     </div>
                     <br> 
                       @CSRF

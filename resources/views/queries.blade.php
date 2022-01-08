@@ -1,20 +1,18 @@
 @extends('master')
 @section('content')
-    <div class="starter-template">
-     <div class="panel">
-
-            @if(session()->has('success'))
+<div class="starter-template">
+    <div class="panel">
+        @if(session()->has('success'))
             <p class="alert alert-success">{{session()->get('success')}}</p>
-            @endif
-        </div>
+        @endif
     </div>
-
-    <div class="row">                  
-<div class="thumbnail">
-<div class="labels"></div>
-<div class="caption">         
-<div class="row justify-content-center">
-            <div class="col-md-12">
+</div>
+<div class="row">                  
+    <div class="thumbnail">
+    <div class="labels"></div>
+        <div class="caption">         
+            <div class="row justify-content-center">
+                <div class="col-md-12">
                 <h1>TABULA AR PIERAKSTIEM</h1>
                 <table class="table">
                     <tbody>
@@ -35,7 +33,6 @@
                                Apraksts
                             </th>
                         </tr>
-                        
                           @foreach($queries as $query)
                            <form action="{{route('deletequeries',$query)}}" method="POST">
                         <tr>
@@ -55,9 +52,9 @@
                         @endforeach 
                     </tbody>
                 </table>
-            </div>            
-        </div>       
-     </div>
-</div>
+                </div>            
+            </div>       
+        </div>
+    </div>
 </div>
 @endsection

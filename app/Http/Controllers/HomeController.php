@@ -62,9 +62,15 @@ class HomeController extends Controller
        $category = new \App\Models\Category();
         
           request()->validate([
-             'name' => 'required',
+             'name' => ['required','max:255'],
              'description' => 'required' 
-        ]);  
+        ],[
+             'name.required' => 'Lauks – Nosaukums - ir obligāts!',   
+             'description.required' => 'Lauks – Apraksts - ir obligāts!',  
+             'name.max' => 'Lauks - Nosaukums - nedrīkst pārsniegt 255 rakstzīmes!',
+            ]);  
+          
+         
        
         $category->name = request('name');
         $category->description = request('description');
